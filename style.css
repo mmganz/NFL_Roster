@@ -1,3 +1,12 @@
+body{
+background: url("images/us-1443698.jpg"); 
+ background-repeat: no-repeat;
+background-attachment: fixed;
+    background-size:cover;
+
+
+
+
 .player-card{
     outline: 1px solid black;
     display:inline-block;
