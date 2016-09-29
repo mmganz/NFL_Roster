@@ -1,12 +1,8 @@
 body{
 background: url("images/football-870283.jpg"); 
- background-repeat: no-repeat;
+background-repeat: no-repeat;
 background-attachment: fixed;
-    background-size:cover;
-
-
-.panel-body{
-    width:65%
+background-size:cover;
 }
 
 
