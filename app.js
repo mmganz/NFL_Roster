@@ -35,13 +35,14 @@ function cards(players){
     var template = ''
     for(var i=0; i<players.length; i++){
         var nfl= players[i]
-        template+= `<div class="player-card">
+        template+= `
         <div class="card">
+        <div class="player-card">
          <img class="card-img-top" src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/">
          <div class="card-block">
           <p class="card-text cName text">${nfl.name}</p>
          <p class="card-text cPosition text">${nfl.position}</p>
-         <p class="card-text cNumber text">${nfl.number}</p>
+         <p class="card-text cNumber text">${nfl.jersey}</p>
          </div>
          </div>
          </div>`

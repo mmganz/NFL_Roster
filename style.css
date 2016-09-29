@@ -1,13 +1,17 @@
 body{
-background: url("images/us-1443698.jpg"); 
+background: url("images/football-870283.jpg"); 
  background-repeat: no-repeat;
 background-attachment: fixed;
     background-size:cover;
 
 
-
-
-.player-card{
-    outline: 1px solid black;
-    display:inline-block;
+.panel-body{
+    width:65%
 }
+
+
+.card-style{
+    display: inline-block;
+    outline: 1px solid black;
+}
+
