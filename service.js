@@ -68,4 +68,3 @@ this.removePlayer = function(id){
     }   
 loadPlayersData();
 }
-

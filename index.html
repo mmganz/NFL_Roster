@@ -11,19 +11,20 @@
 <body>
     <div class="container">
         <div class="jumbotron">
-            <h1 class="strokeme">NFL ROSTER</h1>
-        </div>
+            <img src="images/banner_new2.png" alt="football">
+            <h1>NFL ROSTER</h1>
+            </div>
         <!--<div class="panel panel-default">
             <div class="panel-heading">My NFL Roster</div>
             <div class="panel-body">-->
-                <div class="card-style">
-                    <div class="player-roster" id="roster"></div>
-                </div>
+                <!--<div class="card-style">-->
+                    <!--<div class="player-roster" id="roster"></div>
+                </div>-->
             <!--</div>
         </div>-->
 
 
-        <form id="new-player-form">
+        <!--<form id="new-player-form">
             <div class="player-form">
                 <div class="form-group row">
                     <div class="col-xs-4">
@@ -42,23 +43,27 @@
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Add</button>
-        </form>
+        </form>-->
 
         <form id="nfl-data">
             <div class="nfl-data">
                 <div class="form-group row">
                     <div class="col-xs-4">
-                         <input id="sPosition" type="text" class="form-control" name="inputPosition" placeholder="Search Position" required>
+                         <input id="sPosition" type="text" class="form-control" name="inputPosition" placeholder="Search Position">
                     </div>
+                    <button type="button" id="sPosition" class="btn btn-primary position">Search</button>
                 </div>
                 <div class="form-group row">
                         <div class="col-xs-4">
-                             <input type="text" class="form-control" name="inputPosition" placeholder="Search Team" required>
+                             <input type="text" class="form-control position" name="inputPosition" placeholder="Search Team">
                         </div>
                 </div>
-                <button type="submit" id="sTeam" class="btn btn-primary search">Search</button>
+                <button type="button" id="sTeam" class="btn btn-primary team">Search</button>
+                <button type="submit" class="btn btn-info" id="clearFilter">Clear Filter</button>
             </div>
             </form>
+
+            <div class="player-roster" id="roster"></div>
 
 
     </div>

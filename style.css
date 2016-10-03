@@ -6,29 +6,18 @@ background-size:cover;
 }
 
 
-    .strokeme{
-    color: transparent;
-    text-shadow:
-    -1px -1px 0 #ffffff,
-    1px -1px 0 #ffffff,
-    -1px 1px 0 #ffffff,
-    1px 1px 0 #ffffff;
-    
-}
-
 
 
 .jumbotron{
     text-align: center;
     background: transparent;
-    color: white;
-    z-index:-1;
-
+    color: #D3D3D3;
 
 }
 
 .card{
     display: inline-block;
+    background-color:#D3D3D3;
 }
 
 .card-style{
