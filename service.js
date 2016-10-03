@@ -14,6 +14,8 @@ this.getPlayersByTeam = function(teamName){
     _playersData.filter(function(player){
         if(player.team == teamName){
             return true;
+
+        }
         });
 }    
 

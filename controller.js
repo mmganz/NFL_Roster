@@ -48,10 +48,10 @@ function ready(){
 $('#nfl-data').on('click',function(){
     var positionWR = playerService.getPlayersByPosition("WR");
      var teamSF = playerService.getPlayersByTeam("SF");
-}
+})
 
 
-var filteredPlayers= playersData.filter(function(player){
+var filteredPlayers = playersData.filter(function(player){
 if(player.team == "SF"){
     return true;
 }
