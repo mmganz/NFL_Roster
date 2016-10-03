@@ -59,13 +59,10 @@ function PlayerController(){
             elem.append(target == '#nfl-roster' ? nflTemplate : myTemplate)
         }
 
-
-
-
        }
 
-
    }
+}
 
 //     function updateRoster(arr){
 //         var rosterElem = $('#nfl-roster')
@@ -127,4 +124,4 @@ function PlayerController(){
 
 // }
 
-// PlayerController()
+// PlayerController();
