@@ -5,11 +5,17 @@ background-attachment: fixed;
 background-size:cover;
 }
 
+
 .roster-jumbo{
     background-color: rgba(0,0,0,.3);
     text-align: center;
-    color: #F9F9F9;
+     color: #27408B;
 
+}
+
+.h1-text{
+    color:#F9F9F9;
+    font-size: 4rem;
 }
 
 

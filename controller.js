@@ -20,6 +20,21 @@ function PlayerController(){
 
        })
 
+       $('#nfl-team').on('change', function(){
+        // $(this).val()
+        // var x =$(this) 
+        var x = playerService.addMyTeam($(this).val());
+        update(x, '#nfl-roster');
+
+       })
+
+       $('#nfl-position').on('change', function(){
+        var y = playerService.addMyPosition($(this).val());
+        update(y, '#nfl-roster');
+
+       })
+       
+
        function update(list, target){
         var elem = $(target)
         elem.empty()
@@ -34,13 +49,15 @@ function PlayerController(){
          <img class="card-img-top" src="${player.photo}" height="170" width="170">
          <div class="card-block">
           <p class="card-text cName text">${player.fullname}</p>
-         <p class="card-text cPosition text">${player.position}</p>
+         <p class="card-text cPosition text">${playerService.formatPosition(player.position)}</p>
          <p class="card-text cNumber text">${player.jersey}</p>
+         <p class="card-text cTeam text">${playerService.formatTeam(player.pro_team)}</p>
          <button class="btn-sucess" id="${player.id}">ADD TO TEAM</button>
          </div>
          </div>
          </div>
             `
+
 
             var myTemplate =`
             <div class="card">
@@ -48,8 +65,9 @@ function PlayerController(){
          <img class="card-img-top" src="${player.photo}" height="170" width="170">
          <div class="card-block">
           <p class="card-text cName text">${player.fullname}</p>
-         <p class="card-text cPosition text">${player.position}</p>
+         <p class="card-text cPosition text">${playerService.formatPosition(player.position)}</p>
          <p class="card-text cNumber text">${player.jersey}</p>
+         <p class="card-text cTeam text">${playerService.formatTeam(player.pro_team)}</p>
          <button class="remove-player btn-danger" id="${player.id}">REMOVE FROM TEAM</button>
          </div>
          </div>

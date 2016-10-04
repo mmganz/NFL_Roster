@@ -10,35 +10,109 @@
 
 <body>
     <div class="container">
-
-        <!--<form id="nfl-data">
-            <div class="nfl-data">
-                <div class="form-group row">
-                    <div class="col-xs-4">
-                         <input id="sPosition" type="text" class="form-control" name="inputPosition" placeholder="Search Position">
-                    </div>
-                    <button type="button" id="sPosition" class="btn btn-primary position">Search</button>
+          <div class="my-roster">
+                <div class="jumbotron roster-jumbo">
+                    <h1 class="h1-text">My Roster</h1>
+            <div id="my-roster">
+                     <div class="card">
+                         <img src="images/62ff79.jpg" alt="placeholder-card">
+         </div>
+            </div>
+            </div>
                 </div>
+
+            <div class="nfl-data">
+                    <div class="col-xs-4">
+    <div class="form-group">
+        <form>
+      <!--<label for="sel1">Select Team:</label>-->
+      <select class="form-control" id="nfl-team">
+       <option value="ANY">Select a team</option>
+            <option value="ARI">Arizona Cardinals</option>
+            <option value="ATL">Atlanta Falcons</option>
+            <option value="BAL">Baltimore Ravens</option>
+            <option value="BUF">Buffalo Bills</option>
+            <option value="CAR">Carolina Panthers</option>
+            <option value="CHI">Chicago Bears</option>
+            <option value="CIN">Cincinnati Bengals</option>
+            <option value="CLE">Cleveland Browns</option>
+            <option value="DAL">Dallas Cowboys</option>
+            <option value="DEN">Denver Broncos</option>
+            <option value="DET">Detroit Lions</option>
+            <option value="GB">Green Bay Packers</option>
+            <option value="HOU">Houston Texans</option>
+            <option value="IND">Indianapolis Colts</option>
+            <option value="JAC">Jacksonville Jaguars</option>
+            <option value="KC">Kansas City Chiefs</option>
+            <option value="LAR">Los Angeles Rams</option>
+            <option value="MIA">Miami Dolphins</option>
+            <option value="MIN">Minnesota Vikings</option>
+            <option value="NE">New England Patriots</option>
+            <option value="NO">New Orleans Saints</option>
+            <option value="NYG">New York Giants</option>
+            <option value="NYJ">New York Jets</option>
+            <option value="OAK">Oakland Raiders</option>
+            <option value="PHI">Philadelphia Eagles</option>
+            <option value="PIT">Pittsburgh Steelers</option>
+            <option value="SD">San Diego Chargers</option>
+            <option value="SEA">Seattle Seahawks</option>
+            <option value="SF">San Francisco 49ers</option>
+            <option value="TB">Tampa Bay Buccaneers</option>
+            <option value="TEN">Tennessee Titans</option>
+            <option value="WAS">Washington Redskins</option>
+      </select>
+       </form>
+      </div>
+      </div>
+      <div class="col-xs-4 col-xs-offset-4">
+          <div class="position-form">
+              <form>
+             <!--<label>Position</label>-->
+          <select class="form-control" id="nfl-position">
+            <option value="ANY">Select a Position</option>
+            <option value="DB">Defensive Back</option>
+            <option value="DL">Defensive Line</option>
+            <option value="K">Kicker</option>
+            <option value="LB">Linebacker</option>
+            <option value="QB">Quarter Back</option>
+            <option value="RB">Running Back</option>
+            <option value="TE">Tight End</option>
+            <option value="WR">Wide Receiver</option>
+          </select>
+        </form>
+
+      </div>
+</div>
+
+      </div>
+      
+
+
+                         <!--<input id="sPosition" type="text" class="form-control" name="inputPosition" placeholder="Search Position">
+                    </div>
+                    <button type="button" id="sPosition" class="btn btn-primary position">Search</button>-->
+                <!--</div>
                 <div class="form-group row">
                         <div class="col-xs-4">
                              <input type="text" class="form-control position" name="inputPosition" placeholder="Search Team">
                         </div>
-                </div>
                 <button type="button" id="sTeam" class="btn btn-primary team">Search</button>
-            </div>
+                </div>-->
+            <!--</div>
             </form>-->
 
-            <div class="my-roster">
-                <div class="jumbotron roster-jumbo">
-                    <h1>My Roster</h1>
-            <div id="my-roster"></div>
-            </div>
+            <div class="teams">
+                <div id="nfl-teams"></div>
+                </div>
+
+                  <div class="positions">
+                <div id="nfl-positions"></div>
                 </div>
 
                 <div class="nfl-roster">
                      <div class="jumbotron nfl-jumbo">
                           <img src="images/banner_new2.png" class ="football-img" alt="football">
-                         <!--<h1>NFL Players</h1>-->
+                         
             <div id="nfl-roster"></div>
             </div>
 

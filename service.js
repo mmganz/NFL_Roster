@@ -1,7 +1,9 @@
  function PlayerService(){
+    var playerService = this;
     var _myPlayers = [];
     var _nfl = [];
-    var playerService = this;
+    // var _filteredPosition = [];
+    // var _filteredTeam = [];
 
     // function Player(name, position, jersey){
     //     this.name = name;
@@ -28,6 +30,109 @@
 // });
 // }
 
+//  var _filteredArray = _nfl.map(formatPosition(player));
+//  _filteredArray = _filteredArray.map(formatTeam(player));
+//  console.log(_filteredArray)
+
+
+playerService.formatPosition = function (positionText){
+    switch (positionText){
+        case 'DB': 
+        return 'Defensive Back';
+        case 'DL':
+        return 'Defensive Line';
+        case 'LB':
+        return 'Linkebacker';
+        case 'K': 
+        return 'Kicker';
+        case 'QB':
+        return 'Quaterback';
+        case 'RB':
+        return 'Running Back';
+        case 'TE':
+        return 'Tight End';
+        case 'WR': 
+        return 'Wide Receiver';
+    }
+}
+
+playerService.formatTeam = function (teamText){
+     switch (teamText) {
+            case 'ARI':
+                return 'Arizona Cardinals';
+            case 'ATL':
+                return 'Atlanta Falcons';
+            case 'BAL':
+                return 'Baltimore Ravens';
+            case 'BUF':
+                return 'Buffalo Bills';
+            case 'CAR':
+                return 'Carolina Panthers';
+            case 'CHI':
+                return 'Chicago Bears'
+            case 'CIN':
+                return 'Cincinnati Bengals';
+            case 'CLE':
+                return 'Cleveland Browns';
+            case 'DAL':
+                return 'Dallas Cowboys';
+            case 'DEN':
+                return 'Denver Broncos';
+            case 'DET':
+                return 'Detroit Lions';
+            case 'GB':
+                return 'Green Bay Packers';
+            case 'HOU':
+                return 'Houston Texans';
+            case 'IND':
+                return 'Indianapolis Colts';
+            case 'JAC':
+                return 'Jacksonville Jaguars';
+            case 'KC':
+                return 'Kansas City Chiefs';
+            case 'LAR':
+                return 'Los Angeles Rams';
+            case 'MIA':
+                return 'Miami Dolphins';
+            case 'MIN':
+                return 'Minnesota Vikings';
+            case 'NE':
+                return 'New England Patriots';
+            case 'NO':
+                return 'New Orleans Saints';
+            case 'NYG':
+                return 'New York Giants';
+            case 'NYJ':
+                return 'New York Jets';
+            case 'OAK':
+                return 'Oakland Raiders';
+            case 'PHI':
+                return 'Philadelphia Eagles';
+            case 'PIT':
+                return 'Pittsburgh Steelers';
+            case 'SD':
+                return 'San Diego Chargers';
+            case 'SEA':
+                return 'Seattle Seahawks';
+            case 'SF':
+                return 'San Francisco 49ers';
+            case 'TB':
+                return 'Tampa Bay Buccaneers';
+            case 'TEN':
+                return 'Tennessee Titans';
+            case 'WAS':
+                return 'Washington Redskins';
+    }
+
+}
+
+playerService.getFilteredPlayers = function(){
+    return _filteredPosition
+}
+
+playerService.getFilteredTeam = function(){
+    return _filteredTeam
+}
 
 playerService.getMyPlayers = function(){
     return _myPlayers
@@ -57,6 +162,28 @@ playerService.removeMyPlayer = function(id){
         }
     }
     return
+}
+
+playerService.addMyTeam = function(teamText){
+    var _filteredTeam = [];
+    for(var i =0; i < _nfl.length; i++){
+        var player = _nfl[i];
+        if(player.pro_team == teamText){
+            _filteredTeam.push(player)
+        }
+    }
+    return _filteredTeam;
+}
+
+playerService.addMyPosition = function(positionText){
+    var _filteredPosition = [];
+    for(var i = 0; i <_nfl.length; i++){
+        var player = _nfl[i];
+        if(player.position == positionText){   
+            _filteredPosition.push(player)
+             }
+    }
+    return _filteredPosition;
 }
 
  playerService.getNFL = function loadPlayersData(callback){
