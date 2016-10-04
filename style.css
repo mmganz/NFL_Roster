@@ -5,19 +5,28 @@ background-attachment: fixed;
 background-size:cover;
 }
 
+.roster-jumbo{
+    background-color: rgba(0,0,0,.3);
+    text-align: center;
+    color: #F9F9F9;
+
+}
 
 
-
-.jumbotron{
+.nfl-jumbo{
     text-align: center;
     background: transparent;
-    color: #D3D3D3;
+    color: #27408B;
 
+}
+
+.football-img{
+    margin-bottom: 10px;
 }
 
 .card{
     display: inline-block;
-    background-color:#D3D3D3;
+    background-color: #F9F9F9;
 }
 
 .card-style{

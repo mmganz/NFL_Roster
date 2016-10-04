@@ -1,6 +1,6 @@
  function PlayerService(){
     var _myPlayers = [];
-    var __nfl = [];
+    var _nfl = [];
     var playerService = this;
 
     // function Player(name, position, jersey){
@@ -37,10 +37,10 @@ playerService.getNflPlayers = function(){
     return _nfl
 }
 
-playerService.addMyPlayer = function(fullname){
-    for(var i=0; i<_nfl.length; i++){
+playerService.addMyPlayer = function(id){
+    for(var i=0; i < _nfl.length; i++){
         var player = _nfl[i];
-        if(player.fullname == fullname){
+        if(player.id == id){
             _myPlayers.push(player)
             _nfl.splice(i,1)
         }
@@ -48,10 +48,10 @@ playerService.addMyPlayer = function(fullname){
   return
 }
 
-playerService.removeMyPlayer = function(fullname){
+playerService.removeMyPlayer = function(id){
     for(var i=0; i<_myPlayers.length; i++){
         var player = _myPlayers[i]
-        if(player.fullname == fullname){
+        if(player.id == id){
            _myPlayers.splice(i,1);
            _nfl.push(player);
         }
@@ -64,19 +64,19 @@ playerService.removeMyPlayer = function(fullname){
 
        var localData = localStorage.getItem('playersData');
       if(localData){
-        playersData = JSON.parse(localData);
-        return callback(playersData); 
+        _nfl = JSON.parse(localData);
+        return callback(_nfl); 
       }
 
        var url = "http://bcw-getter.herokuapp.com/?url=";
       var endPointUrl = url + encodeURIComponent(apiUrl);
         $.getJSON(endPointUrl, function(data){
-          playersData = data.body.players;
+          _nfl = data.body.players;
           console.log('Player Data Ready')
           console.log('Writing Player Data to localStorage')
           localStorage.setItem('playersData', JSON.stringify(playersData))
           console.log('Finished Writing Player Data to localStorage')
-          callback(playersData)
+          callback(_nfl)
         });
         loadPlayersData();
     }   

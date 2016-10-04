@@ -7,16 +7,16 @@ function PlayerController(){
        update(localData, '#nfl-roster')
 
        $('#nfl-roster').on('click', '.btn-sucess', function(){
-           playerService.addMyPlayer(this.fullname);
+           playerService.addMyPlayer(this.id);
            update(playerService.getNflPlayers(), '#nfl-roster');
            update(playerService.getMyPlayers(), '#my-roster');
 
        })
 
-       $('#my-roster').on('click', 'btn-danger', function(){
-           playerService.removeMyPlayer(this.fullname);
+       $('#my-roster').on('click', '.btn-danger', function(){
+           playerService.removeMyPlayer(this.id);
            update(playerService.getNflPlayers(), '#nfl-roster');
-           updat(playerService.getMyPlayers(), '#my-roster');
+           update(playerService.getMyPlayers(), '#my-roster');
 
        })
 
@@ -25,9 +25,9 @@ function PlayerController(){
         elem.empty()
 
         for(var i in list){
-            console.log(list)
+            // console.log(list)
             var player = list[i];
-            console.log(player);
+            // console.log(player);
             var nflTemplate = `
             <div class="card">
         <div class="player-card">
@@ -36,7 +36,7 @@ function PlayerController(){
           <p class="card-text cName text">${player.fullname}</p>
          <p class="card-text cPosition text">${player.position}</p>
          <p class="card-text cNumber text">${player.jersey}</p>
-         <button class="remove-player" id="${player.fullname}">REMOVE FROM TEAM</button>
+         <button class="btn-sucess" id="${player.id}">ADD TO TEAM</button>
          </div>
          </div>
          </div>
@@ -50,7 +50,7 @@ function PlayerController(){
           <p class="card-text cName text">${player.fullname}</p>
          <p class="card-text cPosition text">${player.position}</p>
          <p class="card-text cNumber text">${player.jersey}</p>
-         <button class="remove-player" id="${player.fullname}">REMOVE FROM TEAM</button>
+         <button class="remove-player btn-danger" id="${player.id}">REMOVE FROM TEAM</button>
          </div>
          </div>
          </div>
@@ -63,6 +63,7 @@ function PlayerController(){
 
    }
 }
+PlayerController();
 
 //     function updateRoster(arr){
 //         var rosterElem = $('#nfl-roster')
