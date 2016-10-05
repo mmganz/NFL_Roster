@@ -186,6 +186,12 @@ playerService.addMyPosition = function(positionText){
     return _filteredPosition;
 }
 
+playerService.clearFilter = function(){
+    var team = $('#nfl-team').val('ANY');
+    var pos = $('#nfl-position').val('ANY');
+}
+
+
  playerService.getNFL = function loadPlayersData(callback){
       var apiUrl = "http://api.cbssports.com/fantasy/players/list?version=3.0&SPORT=football&response_format=json";
 

@@ -33,6 +33,16 @@ function PlayerController(){
         update(y, '#nfl-roster');
 
        })
+
+
+       $('#clear').on('click', function(event){
+            event.preventDefault();
+           update(playerService.getNflPlayers(), '#nfl-roster');
+           update(playerService.getMyPlayers(), '#my-roster');
+           playerService.clearFilter();
+        })
+    
+
        
 
        function update(list, target){
