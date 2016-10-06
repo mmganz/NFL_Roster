@@ -1,6 +1,6 @@
  function PlayerService(){
     var playerService = this;
-    var _myPlayers = [];
+    var _myPlayers = lsGetPlayer();
     var _nfl = [];
     // var _filteredPosition = [];
     // var _filteredTeam = [];
@@ -46,7 +46,7 @@ playerService.formatPosition = function (positionText){
         case 'K': 
         return 'Kicker';
         case 'QB':
-        return 'Quaterback';
+        return 'Quarterback';
         case 'RB':
         return 'Running Back';
         case 'TE':
@@ -148,9 +148,10 @@ playerService.addMyPlayer = function(id){
         if(player.id == id){
             _myPlayers.push(player)
             _nfl.splice(i,1)
+            save();
+            return
         }
     }
-  return
 }
 
 playerService.removeMyPlayer = function(id){
@@ -190,6 +191,41 @@ playerService.clearFilter = function(){
     var team = $('#nfl-team').val('ANY');
     var pos = $('#nfl-position').val('ANY');
 }
+
+
+playerService.clearData = function(){
+    localStorage.removeItem('player')
+}
+
+ var save = function(){
+    localStorage.setItem('player', JSON.stringify(_myPlayers))
+}
+
+function lsGetPlayer(){
+    var p = localStorage.getItem('player')
+    if(p){
+         p = JSON.parse(p)
+         }else{
+              p = [];
+         }
+         return p
+}
+
+
+
+// function _save(){
+//     localStorage.setItem('player', JSON.stringify(_myPlayers))
+// }
+
+// function lsGetPlayer(){
+//     var p = localStorage.getItem('player')
+//     if(p){
+//         p = JSON.parse(p)
+//     }else{
+//         p = [];
+//     } 
+//     return p
+// }
 
 
  playerService.getNFL = function loadPlayersData(callback){

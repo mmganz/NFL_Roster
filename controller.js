@@ -4,12 +4,15 @@ function PlayerController(){
     playerService.getNFL(ready)
 
    function ready(localData){
-       update(localData, '#nfl-roster')
+       update(localData, '#nfl-roster');
+       update(playerService.getMyPlayers(), '#my-roster')
 
        $('#nfl-roster').on('click', '.btn-sucess', function(){
            playerService.addMyPlayer(this.id);
            update(playerService.getNflPlayers(), '#nfl-roster');
            update(playerService.getMyPlayers(), '#my-roster');
+           
+           
 
        })
 
@@ -85,12 +88,12 @@ function PlayerController(){
             `
 
             elem.append(target == '#nfl-roster' ? nflTemplate : myTemplate)
-        }
+        }//loop
 
-       }
+       }//update
 
-   }
-}
+   }//ready(localData)
+}//playercontroller 
 PlayerController();
 
 //     function updateRoster(arr){
