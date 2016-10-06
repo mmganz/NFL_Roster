@@ -160,9 +160,10 @@ playerService.removeMyPlayer = function(id){
         if(player.id == id){
            _myPlayers.splice(i,1);
            _nfl.push(player);
+           save();
+    return
         }
     }
-    return
 }
 
 playerService.addMyTeam = function(teamText){
