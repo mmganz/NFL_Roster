@@ -2,37 +2,7 @@
     var playerService = this;
     var _myPlayers = lsGetPlayer();
     var _nfl = [];
-    // var _filteredPosition = [];
-    // var _filteredTeam = [];
 
-    // function Player(name, position, jersey){
-    //     this.name = name;
-    //     this.position = position;
-    //     this.jersey= jersey;
-    //     this.id = id;
-    //     id ++;
-    // }
-
-// this.getPlayersByTeam = function(teamName){
-//     _playersData.filter(function(player){
-//         if(player.team == teamName){
-//             return true;
-
-//         }
-//         });
-// }    
-
-// this.getPlayersByPositions = function(position){
-// _playersData.filter(function(player){
-//     if(player.position == position){
-//         return true;
-//     }
-// });
-// }
-
-//  var _filteredArray = _nfl.map(formatPosition(player));
-//  _filteredArray = _filteredArray.map(formatTeam(player));
-//  console.log(_filteredArray)
 
 
 playerService.formatPosition = function (positionText){
@@ -212,21 +182,6 @@ function lsGetPlayer(){
          return p
 }
 
-
-
-// function _save(){
-//     localStorage.setItem('player', JSON.stringify(_myPlayers))
-// }
-
-// function lsGetPlayer(){
-//     var p = localStorage.getItem('player')
-//     if(p){
-//         p = JSON.parse(p)
-//     }else{
-//         p = [];
-//     } 
-//     return p
-// }
 
 
  playerService.getNFL = function loadPlayersData(callback){
